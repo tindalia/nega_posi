@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="jp">
+<head>
+  <meta charset="UTF-8">
+  <title>ネガポジ判定機</title>
+  <link rel="stylesheet" type="text/css" href="../static/style.css" />
+
+</head>
+
+{% extends "layout.html" %}
+
+{% block className_block %}
+    <div class="className">
+        <ul id="className_list">
+         {% for i in className %}
+             <a class="{{ i }}" href="#">{{ i }}</a><br>
+         {% endfor %}
+        </ul>
+    </div>
+{% endblock %}
+
+{% block answer_block %}
+    <div class="table">
+        {{ table | safe }}
+    </div>
+  <script src="http://code.jquery.com/jquery-1.12.4.min.js"></script>
+  <script type="text/javascript" src="../static/jquery.tablesorter.min.js"></script>
+  <script type="text/javascript" src="../static/jquery.metadata.js"></script>
+  <script type="text/javascript" src="../static/script.js"></script>
+{% endblock %}
+
+{% block TotalNumberTable %}
+    <tr>
+        <td>{{ Pos }}</td>
+        <td>{{ Neu }}</td>
+        <td>{{ Neg }}</td>
+    </tr>
+{% endblock %}

@@ -1,0 +1,125 @@
+{% include "header.html" %}
+
+<!-- Body Start -->
+    <div class="box1">
+    <!-- SelectSubject Start -->
+        <div class="SelectSubject">
+            <b>科目を選ぶところ</b><br>
+            <a class="all_apply" href="#">全て表示</a>
+            {% block className_block %}
+            {% endblock %}
+        </div>
+    <!-- SelectSubject End -->
+    </div>
+
+    <div class="box2">
+    <!-- Tab Start -->
+        <div class="area">
+            <input type="radio" name="tab_name" id="tab1" checked>
+            <label class="tab_class" for="tab1">ALL</label>
+            <!--<div class="content_class">
+                <p>タブ1のコンテンツを表示します</p>
+            </div>-->
+            <input type="radio" name="tab_name" id="tab2" >
+            <label class="tab_class" for="tab2">ポジティブ</label>
+            <!--<div class="content_class">
+                <p>タブ2のコンテンツを表示します</p>
+            </div>-->
+            <input type="radio" name="tab_name" id="tab3" >
+            <label class="tab_class" for="tab3">ネガティブ</label>
+            <!--<div class="content_class">
+                <p>タブ3のコンテンツを表示します</p>
+            </div>-->
+        </div>
+    <!-- Tab End -->
+
+    <div class="box4">
+    <!-- PullDown Start -->
+        <div class="sort">
+            <!-- PercentSort PullDown  -->
+                <div class="Pos_PercentSort">
+                    <select class="sort1">
+                        <option value="">ポジティブ　：昇順/降順</option>
+                        <option value="2,0">ポジティブ　：昇順</option>
+                        <option value="2,1">ポジティブ　：降順</option>
+                    </select>
+                </div>
+                <div class="Neu_PercentSort">
+                        <select class="sort2">
+                            <option value="">ニュートラル：昇順/降順</option>
+                            <option value="3,0">ニュートラル：昇順</option>
+                            <option value="3,1">ニュートラル：降順</option>
+                        </select>
+                </div>
+                <div class="Neg_PercentSort">
+                        <select class="sort3">
+                            <option value="">ネガティブ　：昇順/降順</option>
+                            <option value="4,0">ネガティブ　：昇順</option>
+                            <option value="4,1">ネガティブ　：降順</option>
+                        </select>
+                </div>
+            <!-- PercentSort PullDown End -->
+
+            <!-- WordCountSort PullDown  -->
+                <div class="WordCountSort">
+                    <select class="sort4">
+                        <option value="">文字数　　　：昇順/降順</option>
+                        <option value="1,0">文字数　　　：昇順</option>
+                        <option value="1,1">文字数　　　：降順</option>
+                    </select>
+                </div>
+            <!-- WordCountSort PullDown End -->
+        </div>
+    <!-- PullDown End -->
+
+    <!-- OnOff Button Start -->
+        <div class="switchArea">
+          <input type="checkbox" id="switch1">
+          <label for="switch1"><span></span></label>
+          <div id="swImg"></div>
+        </div>
+    <!-- OnOff Button End -->
+    </div>
+
+    <!-- ResultArea Start -->
+        <div class="ResultArea">
+            <div class="Result">
+                <b>結果を表示するところ</b>
+                {% block answer_block %}
+                {% endblock %}
+            </div>
+        </div>
+    <!-- ResultArea End -->
+    </div>
+
+    <div class="box3">
+    <!-- GraphArea Start -->
+        <div class="Graph">
+            <b>グラフを表示するところ</b>
+            <div class="img">
+                <img src="http://127.0.0.1:5000/graph.png" alt=""/>
+            </div>
+        </div>
+    <!-- GraphArea End -->
+
+    <!-- Total number table -->
+        <div class="table">
+            <p>総数： {{ Neu+Pos+Neg }}</p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>ポジティブ数</th>
+                        <th>ニュートラル数</th>
+                        <th>ネガティブ数</th>
+                    </tr>
+                </thead>
+                <tbody>
+                {% block TotalNumberTable %}
+                {% endblock %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+
+

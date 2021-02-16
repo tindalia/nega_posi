@@ -1,0 +1,273 @@
+/* Header Start */
+    .brand {
+      font-weight: bold;
+      font-size: 20px;
+    }
+    .site-header {
+      position: relative;
+      background-color: #def7ff;
+    }
+    .site-header__wrapper {
+      display: flex;
+      justify-content: space-between;
+      padding-top: 1rem;
+      padding-bottom: 1rem; }
+      @media (min-width: 630px) {
+        .site-header__wrapper {
+          justify-content: initial;
+        }
+      }
+    a.button {
+      -webkit-appearance: none;
+         -moz-appearance: none;
+              appearance: none;
+      color: #fff;
+      background-color: #2fa0f6;
+      min-width: 120px;
+      padding: 0.5rem 1rem;
+      border-radius: 5px;
+      text-align: center;
+      position: absolute; top:10px; right:10px;
+    }
+    a {
+        text-decoration: none;
+    }
+    .title{
+      margin-left: 10%;
+    }
+/* Header End */
+
+/* Body Start */
+
+    html, body{ height: 92%}
+
+    /* box1 Start */
+        .box1{
+            float:left;
+            width:18%;
+	        height:100%;
+	        padding-top:1%;
+        }
+
+        /* SelectSubject Start */
+            .SelectSubject {
+                /*position: absolute;
+                top:100px;
+                left:20px;*/
+                width:100%;
+                height:100%;
+                background-color:#def7ff;
+                overflow-y: scroll;
+                padding: 1rem;
+            }
+        /* SelectSubject End */
+        /* ItemScroll Start
+            .ItemScrollBox {
+                padding-top  : 5%;
+            }
+            .ItemScroll {
+                width:100%;
+                height:355px;
+                background-color:#def7ff;
+                overflow-y: scroll;
+                padding: 1rem;
+            }
+        /* ItemScroll End
+    /* box1 End */
+
+    /* box2 Start */
+        .box2{
+            float:left;
+            width:50%;
+	        height:100%;
+            padding-top:1%;
+            padding-left: 5%;
+            position: relative;
+            margin-left:2% ;
+        }
+
+        /* Tab Start */
+            .area {
+                /*position: absolute;
+                top:100px;
+                left:420px;*/
+                width: 100%;
+                margin: auto;
+                flex-wrap: wrap;
+                display: flex;
+            }
+            .tab_class {
+                width: calc(100%/3);
+                height: 50px;
+                background-color: darkgrey;
+                line-height: 50px;
+                font-size: 15px;
+                display: block;
+                text-align: center;
+                float: left;
+                order: -1;
+            }
+            input[name="tab_name"] {
+                display: none;
+            }
+            input:checked + .tab_class {
+                background-color: cadetblue;
+                color: aliceblue;
+            }
+            .content_class {
+                display: none;
+                width: 100%;
+            }
+            input:checked + .tab_class + .content_class {
+                display: block;
+            }
+        /* Tab End */
+            .box4 {
+                height: 20%;
+            }
+
+        /* PullDown Start */
+            .PullDown {
+                display: block;
+                padding-top: 5%;
+            }
+
+        /* PercentPullDown Start */
+        /* PercentPullDown End */
+        /* WordCountPullDown Start */
+        /* WordCountPullDown End */
+
+        /* OnOffButton Start*/
+            /* === ボタンを表示するエリア ============================== */
+                .switchArea {
+                    line-height    : 46px;                /* 1行の高さ          */
+                    letter-spacing : 0;                   /* 文字間             */
+                    text-align     : center;              /* 文字位置は中央     */
+                    font-size      : 26px;                /* 文字サイズ         */
+
+                    position       : relative;
+                    top            : -75px;
+                    left           : 35%;
+                    margin         : auto;                /* 中央寄せ           */
+                    width          : 150px;               /* ボタンの横幅       */
+                    background     : rgba(255,255,255,1);                /* デフォルト背景色   */
+                }
+
+            /* === チェックボックス ==================================== */
+                .switchArea input[type="checkbox"] {
+                    display        : none;            /* チェックボックス非表示 */
+                }
+
+            /* === チェックボックスのラベル（標準） ==================== */
+                .switchArea label {
+                    display        : block;               /* ボックス要素に変更 */
+                    box-sizing     : border-box;          /* 枠線を含んだサイズ */
+                    height         : 46px;                /* ボタンの高さ       */
+                    border         : 2px solid #999999;   /* 未選択タブのの枠線 */
+                    border-radius  : 30px;                /* 角丸               */
+                }
+
+            /* === チェックボックスのラベル（ONのとき） ================ */
+                .switchArea input[type="checkbox"]:checked +label {
+                    border-color   : #78bd78;             /* 選択タブの枠線     */
+                }
+
+            /* === 表示する文字（標準） ================================ */
+                .switchArea label span:after{
+                    content        : "OFF";               /* 表示する文字       */
+                    padding        : 0 0 0 36px;          /* 表示する位置       */
+                    color          : #999999;             /* 文字色             */
+                }
+
+            /* === 表示する文字（ONのとき） ============================ */
+                .switchArea  input[type="checkbox"]:checked + label span:after{
+                content        : "ON";                /* 表示する文字       */
+                padding        : 0 36px 0 0;          /* 表示する位置       */
+                color          : #78bd78;             /* 文字色             */
+                }
+
+            /* === 丸部分のSTYLE（標準） =============================== */
+                .switchArea #swImg {
+                    position       : relative;            /* 親要素からの相対位置*/
+                    width          : 38px;                /* 丸の横幅           */
+                    height         : 38px;                /* 丸の高さ           */
+                    background     : #999999;             /* カーソルタブの背景 */
+                    top            : -42px;               /* 親要素からの位置   */
+                    left           : 11px;                /* 親要素からの位置   */
+                    border-radius  : 26px;                /* 角丸               */
+                    transition     : .2s;                 /* 滑らか変化         */
+                }
+
+            /* === 丸部分のSTYLE（ONのとき） =========================== */
+                .switchArea input[type="checkbox"]:checked ~ #swImg {
+                    transform      : translateX(90px);    /* 丸も右へ移動       */
+                    background     : #78bd78;             /* カーソルタブの背景 */
+                }
+        /* OnOffButton End*/
+
+        /* ResultArea Start */
+            .ResultArea {
+                width         : 100%;
+                position      : relative;
+                height        : 66%;
+                display: inline-block;
+                /*top           : -25px;*/
+            }
+            .Result {
+                height             : 100%;
+                background-color   : #def7ff;
+                overflow-y         : scroll;
+                padding            : 5%;
+            }
+            /* Table */
+            table {
+                text-align   : center;
+                border       : solid 2px black;
+            }
+            .table th{
+                text-align       : center;
+                background       : #67bcdb;
+                border           : dashed 1px black;
+            }
+            .table td {
+                border           : dashed 1px black;
+            }
+            /* Table End */
+        /* ResultArea End */
+    /* box2 End */
+
+    /* box3 Start */
+        .box3{
+            float         : left;
+            width         : 18%;
+	        height        : auto;
+            padding       : 1%;
+            margin-top    : 1%;
+            margin-left   : 1%;
+            background    : #def7ff;
+        }
+        /* GraphArea Start */
+            .Graph {
+                width       : 100%;
+                height      : 40%;
+                padding     : 1%;
+            }
+            .img img {
+                width     :100%;
+            }
+        /* GraphArea End */
+        /* TotalNumberTable Start*/
+            .box3 table{
+
+            }
+        /* TotalNumberTable End */
+    /* box3 End */
+
+    /* list */
+    ul {
+        list-style: none;
+        padding-left: 0;
+        margin-left: 0;
+    }
+    /* list End */
+/* Body End */
